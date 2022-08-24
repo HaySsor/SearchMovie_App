@@ -1,4 +1,5 @@
-import render from './render'
+import render from './renderHtml'
+import find from './findMovieonWatchlist'
 import '../style/style.scss'
 
 let myFilm = []
@@ -12,10 +13,8 @@ if (leadsFromLocalStorage) {
 }
 
 function renderLocalList() {
-
-    const uniqueArray = myFilm.filter((value, index, self) =>
+     const uniqueArray = myFilm.filter((value, index, self) =>
         index === self.findIndex((t) => t.Title === value.Title))
-
 
     document.querySelector('.movielist').innerHTML = ''
     uniqueArray.forEach((move, i) => {
@@ -30,26 +29,6 @@ function renderLocalList() {
             })
         })
     })
-}
-
-const find = (value) => {
-    let searchMovie = []
-
-    if (value.trim().length !== 0) {
-        myFilm.forEach(move => {
-            const match = new RegExp(value, 'i').test(move.Title)
-            if (match) {
-                searchMovie.push(move)
-            } else {
-                return
-            }
-        })
-    } else {
-        searchMovie = leadsFromLocalStorage
-    }
-
-    myFilm = searchMovie
-    renderLocalList()
 }
 
 
