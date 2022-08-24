@@ -4,12 +4,12 @@ import render from './render'
 const inputTitleMovie = document.querySelector('.search')
 const leadsFromLocalStorage = JSON.parse(localStorage.getItem("myFilm"))
 
- let addedfilm
- 
+let addedfilm
+
 if (leadsFromLocalStorage) {
   addedfilm = leadsFromLocalStorage
-}else{
-  addedfilm =[]
+} else {
+  addedfilm = []
 }
 
 
@@ -17,7 +17,7 @@ const getData = async () => {
   document.querySelector('.movielist').innerHTML = ''
   const MoveTitle = inputTitleMovie.value
 
-  const URL = `http://www.omdbapi.com/?i=tt3896198&apikey=dfff31dd&s=${MoveTitle}`
+  const URL = `https://www.omdbapi.com/?i=tt3896198&apikey=dfff31dd&s=${MoveTitle}`
 
   try {
     const res = await fetch(URL)
@@ -50,7 +50,7 @@ const getData = async () => {
 
 
 const GetSpecialInfo = async (title, i) => {
-  const URL = `http://www.omdbapi.com/?i=tt3896198&apikey=dfff31dd&t=${title}`
+  const URL = `https://www.omdbapi.com/?i=tt3896198&apikey=dfff31dd&t=${title}`
 
   const res = await fetch(URL)
   const data = await res.json()
