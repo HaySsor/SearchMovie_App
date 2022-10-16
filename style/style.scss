@@ -93,6 +93,7 @@ body {
 		transform: translateX(140%);
 		z-index: 10;
 		width: 25px;
+		
 	}
 	.search-btn {
 		padding: 15px 10px;
@@ -109,6 +110,7 @@ body {
 		&:hover {
 			background-color: #cecece;
 			color: black;
+			
 		}
 	}
 }
