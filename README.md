@@ -1,3 +1,6 @@
 # SearchMovie_App
 
-Hello is my web-app to search movie and add to your watchlist page. On GitHub Page it does not work because git block http. And this API works on http  
+A simple application in vanilla JavaScript to practice the API, one page is used to search for and add videos to a "watch list" while the other saves this list in LocalStorage and displays it, this project is split into components keeping the code clean. 
+
+
+**live** https://hayssor.github.io/SearchMovie_App/
